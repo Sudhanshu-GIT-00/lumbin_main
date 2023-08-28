@@ -4,7 +4,15 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import ConnectModal from './Components/ConnectModal';
 import Partners from './Components/Partners';
-import { BrowserRouter as Router, Route, Routes, Link, } from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Routes, Link, } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Link,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+
 import Dashboard from './Components/Pages/Dashboard';
 import AboutUs from './Components/Pages/AboutUs';
 import Services from './Components/Pages/Services';
@@ -12,9 +20,19 @@ import Projects from './Components/Pages/Projects';
 import Jobs from './Components/Pages/Jobs';
 import ContactUs from './Components/Pages/ContactUs';
 
-function App() {
+// 3️⃣ Router singleton created
+const router = createBrowserRouter([
+  { path: "*", Component: Root },
+]);
+
+// 4️⃣ RouterProvider added
+export default function App() {
+  return <RouterProvider router={router} />;
+}
+
+function Root() {
   return (
-    <Router>
+    <>
     <div className="App">
     <Navbar/>
     <Routes>
@@ -33,8 +51,7 @@ function App() {
     
     <Footer/>
     </div>
-    </Router>
+    </>
   );
 }
 
-export default App;

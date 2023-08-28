@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../Assests/lumbini-logo.jpg'
+import { Link } from "react-router-dom";
 
 const Navbar=()=>{
 return(
@@ -13,22 +14,24 @@ return(
       </div>
       <ul className="flex space-x-8 mx-8 ">
         <li>
-          <a className="hover:text-green-700" href="/">Home</a>
+          <Link className="hover:text-green-700" to="/">Home</Link>
+          {/* <Link to="/Path" exact component={yourCompponent} > Contact us </Link>  */}
+
         </li>
         <li>
-          <a className="hover:text-green-700" href="/about">About Us</a>
+          <Link className="hover:text-green-700" to="/about">About Us</Link>
         </li>
         <li>
-          <a className="hover:text-green-700" href="/services">Services</a>
+          <Link className="hover:text-green-700" to="/services">Services</Link>
         </li>
         <li>
-          <a className="hover:text-green-700" href="/projects">Projects</a>
+          <Link className="hover:text-green-700" to="/projects">Projects</Link>
         </li>
         <li>
-          <a className="hover:text-green-700" href="/jobs">Jobs</a>
+          <Link className="hover:text-green-700" to="/jobs">Jobs</Link>
         </li>
         <li>
-          <a className="hover:text-green-700" href="/contactus">Contact us</a>
+          <Link className="hover:text-green-700" to="/contactus">Contact us</Link>
         </li>
       </ul>
     </nav>
